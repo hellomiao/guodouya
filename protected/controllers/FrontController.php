@@ -10,7 +10,7 @@ class FrontController extends Controller {
     public function actionLogin() {
         $this->layout = "loginLayout";
         $this->render("login");
-    
+   
     }
 
     public function actionAjaxLogin() {
@@ -18,8 +18,10 @@ class FrontController extends Controller {
         if (isset($_POST['LoginForm'])) {
             $User->attributes = $_POST['LoginForm'];
            
-              if ($User->validate()) {
+              if ($User->validate()&&$User->login()) {
                  echo 'ok';
+            }else{
+                echo 'false';
             }
         }
     }

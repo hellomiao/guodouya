@@ -19,9 +19,15 @@
             LoginForm['PassWord']=$("#password").val();
             var url = "/front/AjaxLogin";
             $(this).attr("value","登录中...");
+            var that = this;
             $.post(url,{LoginForm:LoginForm},function(d){
-               alert(d); 
-                $(this).attr("value","登 录");
+                if(d=='ok'){
+                   alert('登录成功');
+                }else{
+                    $("#msg").show();
+                     $("#msg").html('提示：邮箱或者密码错误！');
+                      $(that).attr("value","登 录");
+                }
             });
         });
     })
@@ -43,7 +49,7 @@
 
                 <fieldset class="email">
                     <label class="label" for="first_name">密码</label>
-                    <input type="text" name="first_name" id="password" class="text first_name" value="" xplaceholder="First name" maxlength="254">
+                    <input type="password" name="first_name" id="password" class="text first_name" value="" xplaceholder="First name" maxlength="254">
                 </fieldset>
 
 

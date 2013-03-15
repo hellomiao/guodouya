@@ -44,17 +44,12 @@ class User extends CActiveRecord
 	}
 
 
-   public function authenticate($attribute, $params) {
 
-        $this->_identity = new UserIdentity($this->Email, $this->PassWord);
-        if (!$this->_identity->authenticate())
-            $this->addError('PassWord', '错误的用户名或密码');
-        
-    }
 
     public function login() {
-
+       
         if ($this->_identity === null) {
+             
             $this->_identity = new UserIdentity($this->Email, $this->PassWord);
             $this->_identity->authenticate();
         }
@@ -75,7 +70,7 @@ class User extends CActiveRecord
 	 */
 	public function validatePassword($password)
 	{
-		return crypt($password,$this->password)===$this->password;
+		return crypt($password,$this->PassWord)===$this->PassWord;
 	}
 
 	/**

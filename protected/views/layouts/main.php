@@ -2,13 +2,13 @@
 <html>
 <head>
     <meta http-equiv=Content-Type content="text/html;charset=utf-8"/>
-    <title>果豆芽</title>
+    <title><?php echo $this->pageTitle;?>果豆芽</title>
     <!--[if lt IE 9]>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/html5shiv.js"></script>
     <![endif]-->
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap.js"></script>
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/pic.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css"    rel="stylesheet"/>
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.css"    rel="stylesheet"/>
@@ -20,6 +20,7 @@
     </script>
 </head>
 <body>
+<?php $user = User::model()->findByPk(Yii::app()->user->id);?>
 <header class="nav-header header">
     <div class="inner">
         <h3><a class="logo" href>果豆芽</a></h3>
@@ -33,14 +34,14 @@
             <li class="sign">/</li>
             <li class=""><a href="#">创意</a></li>
         </ul>
-        <div class="info pull-right"><img src="img/1.jpg" class="picture img-rounded"/>
+        <div class="info pull-right"><img src="<?php echo Yii::app()->baseUrl.$user->Picture;?>" class="picture img-rounded"/>
             <ul class="nav1">
 
-                <li class="dropdown"> <a class="dropdown-toggle" id="drop4" role="button" data-toggle="dropdown" href="#">我叫喵二狗
+                <li class="dropdown"> <a class="dropdown-toggle" id="drop4" role="button" data-toggle="dropdown" href="#"><?php echo $user->NickName;?>
                     <b class="caret"></b></a>
 
                     <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop4">
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">设置</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="<?php echo $this->createUrl("user/setting");?>">设置</a></li>
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">我的花架</a></li>
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">提醒</a></li>
                         <li role="presentation" class="divider"></li>
@@ -64,7 +65,7 @@
             <div class="container">
                 <div class="row">
                     <div class="span5">
-                        <div class="foot_logo"><a href="index.html"><img src="img/footer.png" alt=""></a></div>
+                        <div class="foot_logo"><a href="index.html"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/footer.png" alt=""></a></div>
                         <div class="copyright">© 2020 果豆芽版权所有</div>
                     </div>
                     <div class="span7">
