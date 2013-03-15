@@ -156,6 +156,33 @@ class Utils {
 
         return false;
     }
+    
+        public static function sendmail($frommail, $fromname, $tomail, $subject, $body, $ccmail, $bccmail) {
+        $mailer = Yii::createComponent('application.extensions.phpmailer.phpmailer');
+        $mail = new PHPMailer();
+        $mail->IsSMTP();
+        $mail->Host = Yii::app()->params['MailHost'];
+        $mail->SMTPAuth = true;
+        $mail->Username = Yii::app()->params['MailUser'];
+        $mail->Password = Yii::app()->params['MailPass'];
+        $mail->CharSet = 'utf-8';
+        $mail->Encoding = 'base64';
+        $mail->From = $frommail;
+        $mail->FromName = $fromname;
+        $mail->AddAddress($tomail);
+        if (!empty($ccmail)) {
+            $mail->AddCC($ccmail);
+        }
+        if (!empty($bccmail)) {
+            $mail->AddCC($bccmail);
+        }
+        $mail->WordWrap = 50;
+        $mail->IsHTML(true);
+        $mail->Subject = $subject;
+        $mail->Body = $body;
+        $mail->AltBody = "";
+        return $mail->Send();
+    }
 
 }
 

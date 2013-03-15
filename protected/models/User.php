@@ -115,4 +115,34 @@ class User extends CActiveRecord
 		$salt.=strtr(substr(base64_encode($rand),0,22),array('+'=>'.'));
 		return $salt;
 	}
+        
+            //激活发送邮件操作
+    public function ActiveMailSend($uid) {
+        $user = User::model()->findByPk($uid);
+        $tomail = $user->email;
+        $frommail = Yii::app()->params['MailUser'];
+        $fromname = Yii::app()->params['EmailName'];
+        $subject = "系统激活邮件";
+        $x = md5($user->email . '+' . $user->Password);
+        $string = base64_encode($user->email . "." . $x);
+        $url = Yii::app()->params['Domain'] . '/user/Active?p=' . $string;
+        $content = "账号激活程序，请点此" . '< a href=' . $url . '>'.$url.'</a> 激活' . ",或者将以下内容复制到地址栏中打开！";
+        $sendEmail = Utils::sendmail($frommail, $fromname, $tomail, $subject, $content, NULL, NULL);
+        if ($sendEmail) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
+    //激活操作;
+    public function activeUser($uid) {
+        $sql = "update {{project_user}} set ActiveFlag=0 where UID={$uid}";
+        $result = Yii::app()->db->createCommand($sql)->query();
+        if ($result) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
 }

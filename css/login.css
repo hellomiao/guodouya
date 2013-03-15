@@ -71,7 +71,7 @@ button {
     line-height: 16px;
     padding: 6px 16px;
 }
-.blue-button:hover,.blue-button:focus {
+.blue-button:hover,.blue-button:focus,.blueactive {
     background:#339933;
     color: #FFFFFF !important;
     cursor: pointer;
