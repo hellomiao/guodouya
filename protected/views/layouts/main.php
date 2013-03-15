@@ -1,55 +1,92 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="language" content="en" />
-
-	<!-- blueprint CSS framework -->
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection" />
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print" />
-	<!--[if lt IE 8]>
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
-	<![endif]-->
-
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
-
-	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+    <meta http-equiv=Content-Type content="text/html;charset=utf-8"/>
+    <title>果豆芽</title>
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/pic.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css"    rel="stylesheet"/>
+    <link href="css/bootstrap.css"    rel="stylesheet"/>
+    <link href="css/bootstrap-responsive.css"    rel="stylesheet"/>
+    <script>
+        $(function(){
+            $('#plant-list li a').popover({trigger:'hover'})
+        })
+    </script>
 </head>
-
 <body>
+<header class="nav-header header">
+    <div class="inner">
+        <h3><a class="logo" href>果豆芽</a></h3>
+        <form class="form-search" >
+            <input type="text" class="input-large" placeholder="搜索植物"/>
+            <input type="button" class="icon-search"/>   </form>
+        <ul class="nav nav-pills">
+            <li class=""><a href="#">首页</a></li>
+            <li class="sign">/</li>
+            <li class="active"><a href="#">花堡</a></li>
+            <li class="sign">/</li>
+            <li class=""><a href="#">创意</a></li>
+        </ul>
+        <div class="info pull-right"><img src="img/1.jpg" class="picture img-rounded"/>
+            <ul class="nav1">
 
-<div class="container" id="page">
+                <li class="dropdown"> <a class="dropdown-toggle" id="drop4" role="button" data-toggle="dropdown" href="#">我叫喵二狗
+                    <b class="caret"></b></a>
 
-	<div id="header">
-		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
-	</div><!-- header -->
+                    <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop4">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">设置</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">我的花架</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">提醒</a></li>
+                        <li role="presentation" class="divider"></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">注销</a></li>
+                    </ul>
+                </li>
+                <li id="msgblock"><a href="" class="msg">12</a></li>
+            </ul>
 
-	<div id="mainmenu">
-		<?php $this->widget('zii.widgets.CMenu',array(
-			'items'=>array(
-				array('label'=>'Home', 'url'=>array('post/index')),
-				array('label'=>'About', 'url'=>array('site/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('site/contact')),
-				array('label'=>'Login', 'url'=>array('site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-			),
-		)); ?>
-	</div><!-- mainmenu -->
 
-	<?php $this->widget('zii.widgets.CBreadcrumbs', array(
-		'links'=>$this->breadcrumbs,
-	)); ?><!-- breadcrumbs -->
+        </div>
+    </div>
+</header>
+    
+    
+    <?php echo $content;?>
+    
+    <footer class="footer">
+    <div class="footer_bottom">
+        <div class="wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="span5">
+                        <div class="foot_logo"><a href="index.html"><img src="img/footer.png" alt=""></a></div>
+                        <div class="copyright">© 2020 果豆芽版权所有</div>
+                    </div>
+                    <div class="span7">
+                        <div class="foot_right_block">
 
-	<?php echo $content; ?>
 
-	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
-		All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
-	</div><!-- footer -->
+                            <div class="clear"></div>
 
-</div><!-- page -->
-
+                            <div class="clear"></div>
+                            <div class="foot_menu">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">关于果豆芽</a></li>
+                                    <li><a href="about.html">隐私条款</a></li>
+                                    <li><a href="about.html">联系我们</a></li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
