@@ -4,15 +4,15 @@
     <meta http-equiv=Content-Type content="text/html;charset=utf-8"/>
     <title>果豆芽</title>
     <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
+    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/html5shiv.js"></script>
     <![endif]-->
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/pic.js"></script>
+    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.js"></script>
+    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap.js"></script>
+    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/pic.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/style.css"    rel="stylesheet"/>
-    <link href="css/bootstrap.css"    rel="stylesheet"/>
-    <link href="css/bootstrap-responsive.css"    rel="stylesheet"/>
+    <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css"    rel="stylesheet"/>
+    <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.css"    rel="stylesheet"/>
+    <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap-responsive.css"    rel="stylesheet"/>
     <script>
         $(function(){
             $('#plant-list li a').popover({trigger:'hover'})
