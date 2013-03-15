@@ -24,7 +24,7 @@ class UserController extends Controller {
     }
 
     public function actionSetting() {
-        echo $nickname = Yii::app()->user->name;
+    
         $this->render("setting");
     }
 
