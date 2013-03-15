@@ -1,27 +1,35 @@
 <script>
-    $(function(){
-        $("#email").blur(function(){
+    $(function() {
+        $("#email").blur(function() {
             var email = $(this).val();
             var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
-             if(!myreg.test(email))
-            {    
-                 $("#msg").show();
-                 $("#msg").html('提示：请输入有效的电子邮箱！');
-                 $(this).focus();
-                 $("#comittrue").hide();
-                  $("#comitfalse").show();
-           }
+            if (!myreg.test(email))
+            {
+                $("#msg").show();
+                $("#msg").html('提示：请输入有效的电子邮箱！');
+                $(this).focus();
+                $("#comittrue").hide();
+                $("#comitfalse").show();
+            }
         });
-        
-        $("#comittrue").click(function(){
+
+        $("#comittrue").click(function() {
             var LoginForm = {};
-            LoginForm['Email']=$("#email").val();
-            LoginForm['PassWord']=$("#password").val();
+            LoginForm['Email'] = $("#email").val();
+            LoginForm['PassWord'] = $("#password").val();
             var url = "/front/AjaxLogin";
-            $(this).attr("value","登录中...");
-            $.post(url,{LoginForm:LoginForm},function(d){
-               alert(d); 
-                $(this).attr("value","登 录");
+            $(this).attr("value", "登录中...");
+            $(this).addClass('blueactive');
+            var that = this;
+            $.post(url, {LoginForm: LoginForm}, function(d) {
+                if (d == 'ok') {
+                    alert('登录成功');
+                } else {
+                    $("#msg").show();
+                    $("#msg").html('提示：邮箱或者密码错误！');
+                    $(that).attr("value", "登 录");
+                    $(this).removeClass('blueactive');
+                }
             });
         });
     })
@@ -43,7 +51,7 @@
 
                 <fieldset class="email">
                     <label class="label" for="first_name">密码</label>
-                    <input type="text" name="first_name" id="password" class="text first_name" value="" xplaceholder="First name" maxlength="254">
+                    <input type="password" name="first_name" id="password" class="text first_name" value="" xplaceholder="First name" maxlength="254">
                 </fieldset>
 
 

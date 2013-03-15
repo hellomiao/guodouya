@@ -6,6 +6,9 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>果豆芽</title>
+    <!--[if lt IE 9]>
+    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/html5shiv.js"></script>
+    <![endif]-->
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl;?>/css/login.css"/>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.js"></script>
 </head>

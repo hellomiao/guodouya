@@ -1,0 +1,188 @@
+a{ text-decoration:none}
+a:hover{ text-decoration:none}
+.dialog_tita{
+   background: none repeat scroll 0 0 #E1ECCB;
+    border-radius: 4px 4px 4px 4px;
+    color: #777777;
+    cursor: pointer;
+    margin: 10px 20px 0 0;
+    padding: 10px
+    
+}
+.dialog_warpper_tita {
+    display: none;
+    float: left;
+    z-index: 99999;
+}
+.table_diat, .center_table_tabdia {
+    border: 0 none;
+    border-collapse: collapse;
+    margin: 0;
+}
+.table_diat td {
+    border: 0 none;
+    border-collapse: collapse;
+    margin: 0;
+
+
+}
+
+.center_tdiat{ background:#fff;}
+.table_kj{ padding:0 10px;}
+.tabel_ctdiat td{padding:5px}
+.tabel_ctdiat td a.close:hover{color:#000}
+.tabel_ctdiat td  h1{color:#fff}
+.top_left_tdiat,.top_right_tdiat, .bottom_left_tdiat, .bottom_right_tdiat {
+    background: none repeat scroll 0 0 #333;
+    height: 8px;
+    opacity: 0.4;
+    width: 8px;
+}
+.top_tdiat, .bottom_tdiat, .left_tdiat, .right_tdiat {
+    background: none repeat scroll 0 0 #333;
+    opacity: 0.4;
+}
+
+a.close{ text-align:right; display:block; text-decoration:none; padding:0 0 5px 0}
+a.close:hover{ text-decoration:none}
+.tabel_ctdiat {
+    background: #E1ECCB;/*蒙板背景图修改*/
+   
+    border-collapse: collapse;
+    margin: 0;
+	padding:10px
+}
+.td_content_ctdiat { padding-bottom:10px; line-height:20px}
+.content_waprpper_ctdiat {
+}
+ .content_ctdiat {
+
+    font-size: 12px;
+    line-height: 20x;
+
+    position: relative;
+    text-align: left;
+}
+
+.td_btn_ctdiat {
+}
+.btn_ctdiat {
+    padding:15px 0 15px 0;
+    text-align: right;
+}
+.btn_ctdiat .btn_small_green, .btn_ctdiat .btn_small_gay {
+    margin: 0 3px;
+}
+.tips_verify {
+    background: url("../img/ico_tip.gif") no-repeat scroll 0 0 transparent;
+    height: 16px;
+    vertical-align: middle;
+    width: 16px;
+}
+.yes_verify {
+    background: url("../img/ico_tip.gif") no-repeat scroll 0 -73px transparent;
+    height: 16px;
+    vertical-align: middle;
+    width: 16px;
+}
+.warm_verify {
+    background: url("../img/ico_tip.gif") no-repeat scroll 0 -25px transparent;
+    height: 16px;
+    vertical-align: middle;
+    width: 16px;
+}
+.error_verify {
+    background: url("../img/ico_tip.gif") no-repeat scroll 0 -50px transparent;
+    height: 16px;
+    vertical-align: middle;
+    width: 16px;
+}
+.dwt .btn_small_green {
+    display: inline-block;
+    font: 12px/14px '宋体','新宋体',sans-serif;
+    text-decoration: none;
+    vertical-align: middle;
+}
+.dwt .btn_small_green b {
+    display: block;
+}
+.dwt .btn_small_green i {
+   background: none repeat scroll 0 0 #9FC25B;
+    border: medium none;
+    border-radius: 4px 4px 4px 4px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 5px 10px;
+}
+.dwt .btn_small_green:hover {
+    background: none repeat scroll 0 0 #5CAC39;
+}
+.dwt .btn_small_gay {
+    background: none repeat scroll 0 0 #E9E9E9;
+    border: 1px solid #DCDBDB;
+    display: inline-block;
+    font: 12px/14px '宋体','新宋体',sans-serif;
+    text-decoration: none;
+    vertical-align: middle;
+     border-radius: 4px 4px 4px 4px;
+}
+.dwt .btn_small_gay b {
+    display: block;
+}
+.dwt .btn_small_gay i {
+    color: #666666;
+    display: block;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 5px 10px;
+    border: medium none;
+     
+}
+.dwt .btn_small_gay:hover {
+    background: none repeat scroll 0 0 #DCDBDB;
+}
+.poptip {
+    display: none;
+    font-size: 12px;
+    left: 0;
+    padding-bottom: 6px;
+    position: absolute;
+    top: 0;
+    width: 260px;
+}
+.cont_pp {
+    background: none repeat scroll 0 0 #303130;
+    border: 1px solid #303130;
+    color: #FFFFFF;
+    display: block;
+    line-height: 20px;
+}
+.cont_pp a {
+    color: #2889A8;
+    text-decoration: none;
+}
+.cont_pp a:hover {
+    color: #37B201;
+}
+.tria_pp {
+    background: url("../img/icons_p.gif") no-repeat scroll -1px -260px transparent;
+    display: block;
+    font-size: 0;
+    height: 6px;
+    margin-left: 33px;
+    margin-top: -1px;
+    position: absolute;
+    width: 12px;
+}
+.wrapper_pp {
+    padding: 5px 10px;
+}
+.poptiptxt{
+    color:#FFFFFF!important;
+}
+.title{ font-weight:600; color:#424242; font-size:13px}
+.desc{ color:#666666; margin-left:5px}
+a.del_event,a.update_event{  color:#6CBA4B; font-weight:normal; cursor:pointer}
+
+

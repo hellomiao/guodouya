@@ -71,7 +71,7 @@ button {
     line-height: 16px;
     padding: 6px 16px;
 }
-.blue-button:hover {
+.blue-button:hover,.blue-button:focus,.blueactive {
     background:#339933;
     color: #FFFFFF !important;
     cursor: pointer;
@@ -100,7 +100,7 @@ button {
 }
 
 .login {
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: #ffffff;
     padding: 23px 20px 20px;
     position: relative;
     width: 350px;
@@ -240,6 +240,7 @@ button {
     box-shadow: 0 1px 1px 0 #FFFFFF inset;
     margin-top:30px;
     color:#666666;
+    
 
 }
 footer {
@@ -248,6 +249,7 @@ footer {
     width:980px;
     margin:0 auto;
     font-size:12px;
+    
 }
 
 footer a{
@@ -259,6 +261,7 @@ footer .footer-info{
 footer .footer-content{
     position:relative;
     bottom:5px;
+    
 }
 
 .footer-end ul li{

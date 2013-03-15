@@ -15,14 +15,17 @@ class UserIdentity extends CUserIdentity
 	 */
 	public function authenticate()
 	{
+            
 		$user=User::model()->find('LOWER(Email)=?',array(strtolower($this->username)));
+               
 		if($user===null)
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
 		else if(!$user->validatePassword($this->password))
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
 		else
 		{
-			$this->_id=$user->id;
+                    
+			$this->_id=$user->ID;
 			$this->username=$user->NickName;
 			$this->errorCode=self::ERROR_NONE;
 		}

@@ -247,7 +247,7 @@ ol, ul, li {
     padding: 6px 16px;
     line-height: 16px;
 }
-.blue-button:hover {
+.blue-button:hover,.blue-button:focus,.blueactive {
     background:#339933;
     color: #FFFFFF !important;
     cursor: pointer;
@@ -266,7 +266,7 @@ ol, ul, li {
     padding: 6px 16px;
     line-height: 16px;
 }
-.red-button:hover {
+.red-button:hover,.red-button:focus {
     background:#FF82AB;
     color: #FFFFFF !important;
     cursor: pointer;
@@ -491,10 +491,10 @@ ol, ul, li {
 .tn-form-row  input.iptzl,.ipt{width:250px;height:26px;color:#AFAFAF}
 .edit_save_on{width:80px;height:30px;text-align:center;line-height:30px;background:#0F72A2;display:inline-block;color:#FFF;border:none;cursor:pointer}
 .edit_save_on:hover{background:#34568F;color:#fff}
-.photo_p {height:60px;margin:20px 0}
+.photo_p {height:64px;margin:20px 0}
 .choose_p{overflow:hidden;padding:15px 0 0 10px;line-height:0px}
 
 .photo_p img {
     border-radius: 50% 50% 50% 50%;
 }
-.file_formupoadfile{cursor:pointer;opacity:0;filter:alpha(opacity=0)9;height:20px;position:absolute; left:-110px; top:5px}
+.file_formupoadfile{cursor:pointer;opacity:0;filter:alpha(opacity=0)9;height:20px!important;position:absolute; left:-110px; top:5px}
