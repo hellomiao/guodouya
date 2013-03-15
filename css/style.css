@@ -209,7 +209,7 @@ ol, ul, li {
 
 
 #content blockquote p {
-     font-size: 14px;
+    font-size: 14px;
 }
 
 #content .lead img{
@@ -218,7 +218,7 @@ ol, ul, li {
 
 .planted .span3{
 
-   width: 32px!important;
+    width: 32px!important;
 }
 
 .row-fluid .planted [class*="span"]:first-child{
@@ -304,7 +304,7 @@ ol, ul, li {
     margin-bottom: 20px;
 }
 .wiki-edit{
-      margin-left: 5px;
+    margin-left: 5px;
 }
 .wiki-edit .edit{
     background: url(../img/w_edit.png) no-repeat;
@@ -341,9 +341,9 @@ ol, ul, li {
 .leftpic-list li a {display:block; width:32px; height:32px;  }
 .leftpic-list li img{display:block;transition: opacity 1.5s ease-in-out;-moz-transition:  opacity 1.5s ease-in-out;-webkit-transition: opacity 1.5s ease-in-out;-o-transition: opacity 1.5s ease-in-out;}
 
- .time{
-color:#666666;
-font-size:12px;
+.time{
+    color:#666666;
+    font-size:12px;
 }
 .comments .list ul li{
     display: block;
@@ -391,16 +391,16 @@ font-size:12px;
     transition: opacity 1.5s ease-in-out;-moz-transition:  opacity 1.5s ease-in-out;-webkit-transition: opacity 1.5s ease-in-out;-o-transition: opacity 1.5s ease-in-out;
 }
 .waterfall .name{
-background: none repeat scroll 0 0 #000000;
-bottom: 14px;
-color: #FFFFFF;
-height: 20px;
-left: 15px;
-line-height: 20px;
-opacity: 0.7;
-padding: 0 0.5em;
-position: absolute;
-text-align: center;
+    background: none repeat scroll 0 0 #000000;
+    bottom: 14px;
+    color: #FFFFFF;
+    height: 20px;
+    left: 15px;
+    line-height: 20px;
+    opacity: 0.7;
+    padding: 0 0.5em;
+    position: absolute;
+    text-align: center;
 }
 
 .waterfall{width:972px}
@@ -459,7 +459,7 @@ text-align: center;
     color: #646464;
 }
 .reply-list img{
-     vertical-align: -12px;
+    vertical-align: -12px;
     padding-right: 4px;
 }
 
@@ -473,3 +473,28 @@ text-align: center;
     border-bottom: none!important;
     padding: 0!important;
 }
+
+#personinfo{
+    background: #ffffff;
+    width: 100%;
+}
+.edit_photo{height:36px}
+.edit_photo li,.edit_photo li a,.edit_photo li a.on span{float:left;height:34px;background:#fff;zoom:1;display:block;line-height:35px;}
+.edit_photo li a{margin:0 5px 0 0;font-size:14px;color:#2889A8}
+.edit_photo li a span{padding:0 5px}
+.edit_photo li a.on {border:1px solid #eee;color:#333}
+.edit_photo li a.on span{border-top:3px solid #29A2CF;font-weight:bold;background:#fff;color:#333;padding:0 10px;}
+.settings{font-size:18px;color:#87C2C2;}
+.tn-form .tn-form-row{padding:6px 0}
+.tn-form  .tn-form-label{width:50px;text-align:left;display:inline-block}
+
+.tn-form-row  input.iptzl,.ipt{width:250px;height:26px;color:#AFAFAF}
+.edit_save_on{width:80px;height:30px;text-align:center;line-height:30px;background:#0F72A2;display:inline-block;color:#FFF;border:none;cursor:pointer}
+.edit_save_on:hover{background:#34568F;color:#fff}
+.photo_p {height:60px;margin:20px 0}
+.choose_p{overflow:hidden;padding:15px 0 0 10px;line-height:0px}
+
+.photo_p img {
+    border-radius: 50% 50% 50% 50%;
+}
+.file_formupoadfile{cursor:pointer;opacity:0;filter:alpha(opacity=0)9;height:20px;position:absolute; left:-110px; top:5px}
