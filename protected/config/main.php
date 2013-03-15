@@ -34,10 +34,10 @@ return array(
 		// uncomment the following to use a MySQL database
 		*/
 		'db'=>array(
-			'connectionString' => 'mysql:host=192.154.96.183;dbname=guodouya',
+			'connectionString' => 'mysql:host=118.244.146.252;dbname=guodouya',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '2ms7my00',
+			'password' => '123456',
 			'charset' => 'utf8',
 			'tablePrefix' => 'g_',
 		),
