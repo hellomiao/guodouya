@@ -37,9 +37,11 @@ class User extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('Email,PassWord', 'required','on'=>'login'),
-			array('Email,PassWord,NickName', 'length', 'max'=>128),
+                        array('Email,NickName,PassWord', 'required','on'=>'register'),
+			array('Email', 'length', 'max'=>128),
                         array('Email','email'),
-			array('Picture,Money,LastLogin,CreateTime', 'safe'),
+                        array('NickName', 'length','min'=>3, 'max'=>10),
+			array('Picture,Money,LastLogin,CreateTime,ActiveFlag', 'safe'),
 		);
 	}
 
@@ -119,12 +121,12 @@ class User extends CActiveRecord
             //激活发送邮件操作
     public function ActiveMailSend($uid) {
         $user = User::model()->findByPk($uid);
-        $tomail = $user->email;
+        $tomail = $user->Email;
         $frommail = Yii::app()->params['MailUser'];
         $fromname = Yii::app()->params['EmailName'];
         $subject = "系统激活邮件";
-        $x = md5($user->email . '+' . $user->Password);
-        $string = base64_encode($user->email . "." . $x);
+        $x = md5($user->Email . '+' . $user->PassWord);
+        $string = base64_encode($user->Email . "." . $x);
         $url = Yii::app()->params['Domain'] . '/user/Active?p=' . $string;
         $content = "账号激活程序，请点此" . '< a href=' . $url . '>'.$url.'</a> 激活' . ",或者将以下内容复制到地址栏中打开！";
         $sendEmail = Utils::sendmail($frommail, $fromname, $tomail, $subject, $content, NULL, NULL);
@@ -137,7 +139,7 @@ class User extends CActiveRecord
 
     //激活操作;
     public function activeUser($uid) {
-        $sql = "update {{project_user}} set ActiveFlag=0 where UID={$uid}";
+        $sql = "update {{users}} set ActiveFlag=1 where UID={$uid}";
         $result = Yii::app()->db->createCommand($sql)->query();
         if ($result) {
             return TRUE;

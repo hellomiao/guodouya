@@ -15,8 +15,15 @@ class Utils {
         if ($halt)
             exit;
     }
+    
+      public static function js_console_log($alert_msg, $halt = true) {
+        echo "<script language='javascript'>console.log('{$alert_msg}');</script>";
 
-    public function my_image_resize($src_file, $dst_file, $new_width, $new_height) {
+        if ($halt)
+            exit;
+    }
+
+    public static function my_image_resize($src_file, $dst_file, $new_width, $new_height) {
         if (file_exists($dst_file)) {
             chmod($dst_file, 0777);
         }
@@ -30,7 +37,8 @@ class Utils {
         }
 // 图像类型
 //$type=exif_imagetype($src_file);
-        $type = trim(strtolower(end(explode(".", $src_file))));
+        $arr = explode(".", $src_file);
+        $type = trim(strtolower(end($arr)));
         $support_type = array('jpg', 'png', 'gif');
         if (!in_array($type, $support_type, true)) {
             echo "this type of image does not support! only support jpg , gif or png";

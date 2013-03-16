@@ -37,7 +37,7 @@
             var reg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
             if (email) {
                 if (reg.test(email)) {
-                    var url = '/user/AjaxCheckEmail';
+                    var url = '/front/AjaxCheckEmail';
                     $.post(url, {email: email}, function(d) {
                         if (d == 'ok') {
                             $("#msg").hide();
@@ -59,7 +59,7 @@
             }
         });
 
-        $("#submitCreatWork").live("click", function() {
+        $("#comittrue").live("click", function() {
 
 
             var email = txt.getVal("#email");
@@ -82,7 +82,7 @@
                 return false;
                 return false;
             }
-            var url = "<?php echo $this->createUrl("user/AjaxRegister"); ?>";
+            var url = "<?php echo $this->createUrl("front/AjaxRegister"); ?>";
             $.post(url, {nickname: nickname, email: email, password: password}, function(d) {
                 if (d == 'ok') {
                     location.href = "<?php echo $this->createUrl("user/ActiveMsg"); ?>";
@@ -109,7 +109,7 @@
 
                 <fieldset class="password name">
                     <label class="label" for="first_name">密码</label>
-                    <input type="text" name="first_name" id="password" class="text first_name" value="" xplaceholder="First name" maxlength="32">
+                    <input type="password" name="first_name" id="password" class="text first_name" value="" xplaceholder="First name" maxlength="32">
                 </fieldset>
 
                 <fieldset class="email">

@@ -11,6 +11,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css"    rel="stylesheet"/>
+    <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/common.css"    rel="stylesheet"/>
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.css"    rel="stylesheet"/>
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap-responsive.css"    rel="stylesheet"/>
     <script>

@@ -197,8 +197,8 @@ class UploadHandler {
             $this->_setError(501);
             return false;
         }
-
-        $this->_ext = strtolower(end(explode('.', $name)));
+        $namearr = explode('.', $name);
+        $this->_ext = strtolower(end($namearr));
 
         if (false == $this->_ext) {
             $this->_setError(502);

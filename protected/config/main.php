@@ -19,7 +19,19 @@ return array(
 	),
 
 	'defaultController'=>'front',
-
+    	'modules'=>array(
+		//  Gii tool
+		'gii'=>array(
+			'class'=>'system.gii.GiiModule',
+			'password'=>'123456',
+ 			'generatorPaths'=>array(
+						'ext.dwz.gii.module.templates.dwz.module',
+				), 
+			// If removed, Gii defaults to localhost only. Edit carefully to taste.
+			'ipFilters'=>array('127.0.0.1','::1'),
+		),
+		
+	),
 	// application components
 	'components'=>array(
 		'user'=>array(
@@ -34,10 +46,10 @@ return array(
 		// uncomment the following to use a MySQL database
 		*/
 		'db'=>array(
-			'connectionString' => 'mysql:host=118.244.146.252;dbname=guodouya',
+			'connectionString' => 'mysql:host=localhost;dbname=guodouya',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '123456',
+			'password' => '',
 			'charset' => 'utf8',
 			'tablePrefix' => 'g_',
 		),
@@ -48,7 +60,7 @@ return array(
 		),
 		'urlManager'=>array(
 			'urlFormat'=>'path',
-                    'showScriptName' => false,
+                        'showScriptName' => false,
 			'rules'=>array(
 				'post/<id:\d+>/<title:.*?>'=>'post/view',
 				'/login'=>'front/login',
