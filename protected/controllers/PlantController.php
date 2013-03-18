@@ -1,8 +1,14 @@
 <?php
 class PlantController extends Controller{
+    /*
+     * 百科首页
+     */
     public function actionIndex(){
         $this->render('index');
     }
+    /*
+     * 添加百科
+     */
     public function actionAdd(){
         if(isset($_POST['addForm'])){
             $plant=new Wiki();
@@ -17,12 +23,17 @@ class PlantController extends Controller{
         }
         $this->render('add');
     }
-    
+    /*
+     * 百科单页
+     */
     public function actionItem(){
         if(isset($_GET['id'])){
             $id=(int)$_GET['id'];
             $info=Wiki::model()->findByPk($id);
             $pic=WikiImgs::model()->getPicByWid($id);
+            print_r($pic);
+            exit;
+            $this->render('item');
         }
     }
     
