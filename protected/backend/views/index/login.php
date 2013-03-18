@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Sign in &middot; Twitter Bootstrap</title>
+    <title>登录 &middot; 果豆芽</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -54,13 +54,13 @@
   <body>
 
     <div class="container">
-
-      <form class="form-signin">
+<?php echo CHtml::errorSummary($manager,'','',array('class'=>'tsInfo'));?>
+      <form class="form-signin" action='<?php echo $this->createUrl('/index/login') ?>' id='Loginform' method='post'>
         <h2 class="form-signin-heading">果豆芽后台管理系统</h2>
-        <input type="text" class="input-block-level" placeholder="用户名">
-        <input type="password" class="input-block-level" placeholder="密码">
+        <input type="text" class="input-block-level" placeholder="用户名" name="LoginForm[username]">
+        <input type="password" class="input-block-level" placeholder="密码" name="LoginForm[password]">
         <label class="checkbox">
-          <input type="checkbox" value="remember-me"> 记住我
+          <input type="checkbox" value="remember-me" name="LoginForm[username]"> 记住我
         </label>
         <button class="blue-button" type="submit">登 录</button>
       </form>

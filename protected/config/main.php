@@ -37,6 +37,7 @@ return array(
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
+                        'loginUrl'=>array('login'),
 		),
             /*
 		'db'=>array(
@@ -45,14 +46,7 @@ return array(
 		),
 		// uncomment the following to use a MySQL database
 		*/
-		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=guodouya',
-			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => '',
-			'charset' => 'utf8',
-			'tablePrefix' => 'g_',
-		),
+		'db'=>require(dirname(__FILE__).'/db.php'),
 		
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors

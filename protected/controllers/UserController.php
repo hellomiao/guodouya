@@ -26,7 +26,7 @@ class UserController extends Controller {
     public function actionSetting() {
          $user = User::model()->findByPk(Yii::app()->user->id);
          $this->pageTitle = "设置";
-        $data=array(
+         $data=array(
             'user'=>$user,
         );
         $this->render("setting",$data);
