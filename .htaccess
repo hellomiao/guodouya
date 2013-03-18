@@ -1,12 +1,14 @@
+AddDefaultCharset utf-8
+
 Options +FollowSymLinks
 IndexIgnore */*
 RewriteEngine on
-# if a directory or a file exists, use it directly
+
+# Make the backend accessible via url: http://site/sysadmin.
+
+# If a directory or a file exists, use it directly.
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-# otherwise forward it to index.php
+# Otherwise forward it to index.php.
 RewriteRule . index.php
-
-# the following is used when installed in root
-#RewriteRule ^.*$ /index.php [L]

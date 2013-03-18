@@ -176,7 +176,7 @@ class IoHandler {
         $delete = @unlink($file);
 
         clearstatcache();
-        $filesys = eregi_replace("/", "\\", $file);
+        $filesys = preg_replace("#/#", "\\", $file);
         if (is_file($filesys) and file_exists($filesys)) {
             $delete = @system("del $filesys");
             clearstatcache();

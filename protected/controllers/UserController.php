@@ -86,14 +86,15 @@ class UserController extends Controller {
     }
     
         public function actionAjaxUpload() {
- 
+      
         $field = 'face';
+        $arr=explode(".", $_FILES[$field]['name']);
         $IoHandler = new IoHandler();
-        $type = trim(strtolower(end(explode(".", $_FILES[$field]['name']))));
+        $type = trim(strtolower(end($arr)));
         if ($type != 'gif' && $type != 'jpg' && $type != 'png') {
             Utils::js_alert_output('图片格式不对');
         }
-
+        
         $image_name = substr(md5($_FILES[$field]['name']), -10) . ".{$type}";
         //$image_name_ = 's'.substr(md5($_FILES[$field]['name']),-10).".{$type}";
         $image_path = './files/temp_imgs/' . $image_name{0} . '/';
@@ -102,15 +103,16 @@ class UserController extends Controller {
         if (!is_dir($image_path)) {
             $IoHandler->MakeDir($image_path);
         }
-
+  
         $UploadHandler = new UploadHandler($_FILES, $image_path, $field, true, true, 500, 400);
         $UploadHandler->setMaxSize(2048);
         $UploadHandler->setNewName($image_name);
         $result = $UploadHandler->doUpload();
+   
         if ($result) {
             $result = Utils::is_image($image_file);
         }
-        $make_result1 = Utils::my_image_resize($image_file, $image_file, 64, 64);
+       $make_result1 = Utils::my_image_resize($image_file, $image_file, 256, 256);
         if (!$result) {
             $IoHandler->RemoveDir($image_path);
             Utils::js_alert_output('图片上载失败');
@@ -128,51 +130,6 @@ class UserController extends Controller {
         echo "</script>";
     }
     
-        public function actionAjaxRegister() {
-        $nickname = $_POST['nickname'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $user = new User();
-        $user->NickName = $nickname;
-        $user->Email = $email;
-        $user->PassWord = $user->hashPassword($password);
-        if ($user->save()) {
-            $rs = $user->ActiveMailSend($user->ID);
-            $Users = new User('login');
-            $Users->Email = $email;
-            $Users->PassWord = $password;
-            if($Users->login()){
-                 echo 'ok';
-            }
-          
-        }
-    }
-    
-    public function actionActive() {
-        if (isset($_GET['p'])) {
-            $array = explode('.', base64_decode($_GET['p']));
-            $email = $array[0] . '.' . $array[1];
-
-            $User = User::model()->find("Email='{$email}'");
-            $checkCode = md5($email . '+' . $User->PassWord);
-            if ($array['2'] === $checkCode) {
-                $result = User::model()->activeUser($User->ID);
-                if ($result) {
-                    $this->redirect($this->createUrl("login"));
-                }
-            }
-        }
-    }
-    
-        public function actionAjaxCheckEmail() {
-        $email = $_POST['email'];
-        $sql = "select ID from {{users}} where Email='{$email}'";
-        $result = Yii::app()->db->createCommand($sql)->queryRow();
-        if ($result) {
-            echo '电子邮箱已存在!';
-        } else {
-            echo 'ok';
-        }
-    }
+       
 
 }
