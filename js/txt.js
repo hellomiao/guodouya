@@ -45,6 +45,9 @@ var txt = {
         var mydiv = document.getElementById("wordCheck");
         if (myLen > len * 2) {
             src.value = str.substring(0, i - 1);
+           
+        }else{
+         mydiv.innerHTML=Math.floor((len*2-myLen)/2);
         }
 
     }

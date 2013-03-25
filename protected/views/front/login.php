@@ -28,7 +28,7 @@
                     $("#msg").show();
                     $("#msg").html('提示：邮箱或者密码错误！');
                     $(that).attr("value", "登 录");
-                    $(this).removeClass('blueactive');
+                    $(that).removeClass('blueactive');
                 }
             });
         });

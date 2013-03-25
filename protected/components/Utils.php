@@ -15,8 +15,8 @@ class Utils {
         if ($halt)
             exit;
     }
-    
-      public static function js_console_log($alert_msg, $halt = true) {
+
+    public static function js_console_log($alert_msg, $halt = true) {
         echo "<script language='javascript'>console.log('{$alert_msg}');</script>";
 
         if ($halt)
@@ -164,8 +164,8 @@ class Utils {
 
         return false;
     }
-    
-        public static function sendmail($frommail, $fromname, $tomail, $subject, $body, $ccmail, $bccmail) {
+
+    public static function sendmail($frommail, $fromname, $tomail, $subject, $body, $ccmail, $bccmail) {
         $mailer = Yii::createComponent('application.extensions.phpmailer.phpmailer');
         $mail = new PHPMailer();
         $mail->IsSMTP();
@@ -191,6 +191,48 @@ class Utils {
         $mail->AltBody = "";
         return $mail->Send();
     }
+
+    public function checkWord($str){
+        $arr = Yii::app()->params['Word'];
+        $word = $arr[0];
+        foreach($word as $k=>$v){
+             if (strpos($str, $v) !== FALSE) {
+                 return false;
+             }else{
+                 return true;
+             }
+        }
+        
+    }
+    
+    public static function tranTime($time) { 
+    $time = strtotime($time);
+    $rtime = date("m-d H:i",$time); 
+    $htime = date("H:i",$time); 
+    $time = time() - $time; 
+    if ($time < 60) { 
+        $str = '刚刚'; 
+    } 
+    elseif ($time < 60 * 60) { 
+        $min = floor($time/60); 
+        $str = $min.'分钟前'; 
+    } 
+    elseif ($time < 60 * 60 * 24) { 
+        $h = floor($time/(60*60)); 
+        $str = $h.'小时前 '.$htime; 
+    } 
+    elseif ($time < 60 * 60 * 24 * 3) { 
+        $d = floor($time/(60*60*24)); 
+        if($d==1) 
+           $str = '昨天 '.$rtime; 
+        else 
+           $str = '前天 '.$rtime; 
+    } 
+    else { 
+        $str = $rtime; 
+    } 
+    return $str; 
+} 
 
 }
 

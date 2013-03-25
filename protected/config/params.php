@@ -8,5 +8,6 @@ return array(
         'Name'=>'果豆芽',
         'EmailName'=>'果豆芽',
         'Domain'=>'http://www.guo.me',
+        'Word'=>require(dirname(__FILE__).'/word.php'),
  
 );

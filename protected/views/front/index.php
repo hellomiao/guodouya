@@ -80,7 +80,7 @@
                 $("#msg").show();
                 $("#msg").html('提示：密码不能为空');
                 return false;
-                return false;
+    
             }
             var url = "<?php echo $this->createUrl("front/AjaxRegister"); ?>";
             $.post(url, {nickname: nickname, email: email, password: password}, function(d) {

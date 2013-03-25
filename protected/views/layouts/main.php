@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv=Content-Type content="text/html;charset=utf-8"/>
-    <title><?php echo $this->pageTitle;?>果豆芽</title>
+    <title><?php echo $this->pageTitle;?> &middot; 果豆芽</title>
     <!--[if lt IE 9]>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/html5shiv.js"></script>
     <![endif]-->
@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css"    rel="stylesheet"/>
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/common.css"    rel="stylesheet"/>
+    <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/pager.css"    rel="stylesheet"/>
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.css"    rel="stylesheet"/>
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap-responsive.css"    rel="stylesheet"/>
     <script>
@@ -21,7 +22,10 @@
     </script>
 </head>
 <body>
-<?php $user = User::model()->findByPk(Yii::app()->user->id);?>
+<?php 
+$user = User::model()->findByPk(Yii::app()->user->id);
+$picture = User::model()->getPicture(Yii::app()->user->id);?>
+
 <header class="nav-header header">
     <div class="inner">
         <h3><a class="logo" href>果豆芽</a></h3>
@@ -35,7 +39,7 @@
             <li class="sign">/</li>
             <li class=""><a href="#">创意</a></li>
         </ul>
-        <div class="info pull-right"><img src="<?php echo Yii::app()->baseUrl.$user->Picture;?>" class="picture img-rounded"/>
+        <div class="info pull-right"><img src="<?php echo $picture;?>" class="picture img-rounded"/>
             <ul class="nav1">
 
                 <li class="dropdown"> <a class="dropdown-toggle" id="drop4" role="button" data-toggle="dropdown" href="#"><?php echo $user->NickName;?>

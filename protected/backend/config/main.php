@@ -20,7 +20,7 @@ return array(
         'user' => array(
             // enable cookie-based authentication
             'allowAutoLogin' => true,
-            'loginUrl' => array('login'),
+            'loginUrl' => array('backend.php/index/login'),
         ),
         'db' => require($frontend . '/config/db.php'),
         'errorHandler' => array(

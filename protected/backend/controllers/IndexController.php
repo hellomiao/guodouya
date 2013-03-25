@@ -1,6 +1,27 @@
 <?php
 
 class IndexController extends CController {
+    
+        public function filters() {
+        return array(
+            'accessControl', // perform access control for CRUD operations
+        );
+    }
+
+    public function accessRules() {
+        return array(
+            array('allow', // allow all users to access 'index' and 'view' actions.
+                'actions' => array('login'),
+                'users' => array('*'),
+            ),
+            array('allow', // allow authenticated users to access all actions
+                'users' => array('@'),
+            ),
+            array('deny', // deny all users
+                'users' => array('*'),
+            ),
+        );
+    }
 
     public function actionIndex() {
         echo 1;

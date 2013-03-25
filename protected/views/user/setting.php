@@ -40,6 +40,8 @@
         });
          });
         </script>
+  <?php 
+$picture = User::model()->getPicture(Yii::app()->user->id);?>
 <div id="content" class="container" style="width: 70%;">
 
     <div class="container-fluid">
@@ -52,7 +54,7 @@
 <div id="personinfo">
 <div class="settings"><?php echo Yii::app()->user->name;?>的设置</div>
 <div class="photo_p">
-  <p class="pull-left"><img width="64" height="64" id="crop_preview" name="crop_preview" src="<?php echo Yii::app()->baseUrl.$user->Picture;?>"></p>
+  <p class="pull-left"><img width="64" height="64" id="crop_preview" name="crop_preview" src="<?php echo $picture;?>"></p>
   <div class="choose_p">
   <div>
       <iframe width="0" height="0" frameborder="0" id="uploadface" name="uploadface" marginwidth="0" src="about:blank"></iframe>
